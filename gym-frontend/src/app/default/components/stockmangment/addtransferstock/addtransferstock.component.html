@@ -1,0 +1,107 @@
+<form class="addstockform">
+
+    <div class="heading text-center">
+        <h2>ADD NEW TRANSFER <br> STOCK</h2>
+    </div>
+
+    <div class="box-container">
+        <div class="select">
+            <h6>Select an option</h6>
+            <mat-form-field>
+                <mat-select disableRipple>
+                    <mat-option value="1">Option 1</mat-option>
+                    <mat-option value="2">Option 2</mat-option>
+                    <mat-option value="3">Option 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="inputfiled">
+                    <h6>Quantity</h6>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Quantity</mat-label>
+                        <input type="text" matInput [formControl]="quantityFormControl" [errorStateMatcher]="matcher">
+                        <mat-error *ngIf="quantityFormControl.hasError('quantity') && !quantityFormControl.hasError('required')">
+                          Please enter a valid Quantity
+                        </mat-error>
+                        <mat-error *ngIf="quantityFormControl.hasError('required')">
+                            Quantity is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                </div>  
+            </div>
+            <div class="col-md-6">
+                <div class="inputfiled">
+                    <h6>Expiry Date</h6>
+                    <mat-form-field color="accent">
+                        <mat-label>Expire Date</mat-label>
+                        <input matInput [matDatepicker]="picker1" [formControl]="expiredateFormControl" [errorStateMatcher]="matcher">
+                        <mat-error *ngIf="expiredateFormControl.hasError('expiredate') && !expiredateFormControl.hasError('required')">
+                            Please enter a valid date
+                          </mat-error>
+                          <mat-error *ngIf="expiredateFormControl.hasError('required')">
+                         date is <strong>required</strong>
+                          </mat-error>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                      </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="inputfiled">
+                    <h6>From Store</h6>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>From Store</mat-label>
+                        <input type="text" matInput [formControl]="fromstoreFormControl" [errorStateMatcher]="matcher">
+                        <mat-error *ngIf="fromstoreFormControl.hasError('fromstore') && !fromstoreFormControl.hasError('required')">
+                          Please enter a valid Quantity
+                        </mat-error>
+                        <mat-error *ngIf="fromstoreFormControl.hasError('required')">
+                            Quantity is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="inputfiled">
+                    <h6>To Store</h6>
+                    <mat-form-field color="accent">
+                        <mat-label>To Store</mat-label>
+                        <input matInput [matDatepicker]="picker2" [formControl]="todateFormControl" [errorStateMatcher]="matcher">
+                        <mat-error *ngIf="todateFormControl.hasError('todate') && !todateFormControl.hasError('required')">
+                            Please enter a valid to date
+                          </mat-error>
+                          <mat-error *ngIf="todateFormControl.hasError('required')">
+                            date is <strong>required</strong>
+                          </mat-error>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                      </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+        <div class="inputfield">
+            <h6>Stock Note</h6>
+            <mat-form-field class="example-full-width">
+                <mat-label>Stock Note</mat-label>
+                <input type="text" matInput [formControl]="stocknoteFormControl" [errorStateMatcher]="matcher">
+                <mat-error *ngIf="stocknoteFormControl.hasError('stocknote') && !stocknoteFormControl.hasError('required')">
+                  Please enter a stock note
+                </mat-error>
+                <mat-error *ngIf="stocknoteFormControl.hasError('required')">
+                    stock note is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+        </div>
+
+        <div class="button text-center">
+            <button class=" w-100" mat-raised-button>ADD</button>
+        </div>
+
+    </div>
+</form>

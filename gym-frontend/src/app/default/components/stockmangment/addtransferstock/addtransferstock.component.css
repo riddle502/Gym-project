@@ -1,0 +1,30 @@
+
+
+mat-form-field{
+    width: 100% !important;
+}
+form{
+    padding: 28px;
+    background: #e6e6fa91;
+}
+.addstockform h2{
+    font-weight: bold;
+    padding-bottom: 17px;
+    font-size: 27px;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .addstockform button{
+    background: #21324E;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 23px 11px;
+  }

@@ -1,0 +1,162 @@
+<main>
+
+
+<section class="sale">
+    <div class="container">
+
+    <div class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content d-flex align-items-center">
+                    <div class="chevron">
+                        <i class="bi bi-chevron-left"></i>
+                    </div>
+                    <div class="box">
+                        <h4>SALES</h4>
+                        <p>Point Of Sales</p>
+                    </div>
+                </div>
+                <div class="input d-flex align-items-center">
+                    <input type="text" class="form-control" id="exampleInputtext" aria-describedby="textHelp" matInput
+                        (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+                    <button class="btn btn1">Search</button>
+                </div>
+
+                <div class="datepicker mt-4">
+                    <div class="datepicker mt-4 d-flex">
+                        <div class="matformfield">
+                           <h6>From Date</h6>
+                            <mat-form-field color="accent">
+                                <input matInput [matDatepicker]="picker1">
+                                <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <div class="matformfield">
+                            <h6>To Date</h6>
+                            <mat-form-field color="accent">
+                                <input matInput [matDatepicker]="picker2">
+                                <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                                <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      
+
+    <div class="matTable">
+        <div class="row">
+            <div class="col-md-12">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="position">
+                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef> Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    </ng-container>
+
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="weight">
+                        <th mat-header-cell *matHeaderCellDef> Weight </th>
+                        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="symbol">
+                        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                    <!-- Row shown when there is no matching data. -->
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                    </tr>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</section>
+
+</main>
+
+
+
+
+
+
+
+
+
+<!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.Sno}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Mobile </th>
+      <td mat-cell *matCellDef="let element"> {{element.Mobile}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef>Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
+    </ng-container>
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef>Receipt </th>
+      <td mat-cell *matCellDef="let element"> {{element.Receipt}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table> -->
+
+
+<!--   
+  displayedColumns: string[] = ['Sno',  'Mobile', 'Name','Email','Receipt',];
+  dataSource = ELEMENT_DATA; -->
+
+
+  <!-- export interface PeriodicElement {
+    Sno: number;
+    Mobile: number;
+    Name: string;
+    Email: any;
+    Receipt: any;
+  }
+  
+  const ELEMENT_DATA: PeriodicElement[] = [
+    {Sno: 1, Mobile: 88777878788, Name:'Sumit', Email: '-',Receipt:'view',},
+    {Sno: 2, Mobile: 88777878788, Name:'Sumit', Email: '-',Receipt:'view',},
+    {Sno: 3, Mobile: 88777878788, Name:'Sumit', Email: '-',Receipt:'view',},
+    {Sno: 4,Mobile: 88777878788, Name:'Sumit', Email: '-',Receipt:'view',},
+    {Sno: 5, Mobile: 88777878788, Name:'Sumit', Email: '-',Receipt:'view',},
+    {Sno: 6, Mobile: 88777878788, Name:'Sumit', Email: '-',Receipt:'view',},
+    {Sno: 7, Mobile: 88777878788, Name:'Sumit', Email: '-',Receipt:'view',},
+    {Sno: 8, Mobile: 88777878788, Name:'Sumit', Email: '-',Receipt:'view',},
+    {Sno: 9, Mobile: 88777878788, Name:'Sumit', Email: '-',Receipt:'view',},
+    {Sno: 10,Mobile: 88777878788, Name:'Sumit', Email: '-',Receipt:'view',},
+  ]; -->

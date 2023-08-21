@@ -1,0 +1,67 @@
+<form class="categrayform" id="form">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="formcontent">
+
+
+                    <div class="heading text-center">
+                        <h3>PRODUCT <br> CATEGORIES</h3>
+                    </div>
+
+                    <div class="box-container inputfieldset">
+
+                        <div class="inputfield">
+                            <mat-label>Category Name</mat-label>
+                            <mat-form-field class="example-full-width">
+                                <input type="text" matInput [formControl]="categoryFormControl"
+                                    [errorStateMatcher]="matcher">
+                                <mat-error
+                                    *ngIf="categoryFormControl.hasError('category') && !categoryFormControl.hasError('required')">
+                                    Please enter a valid category name
+                                </mat-error>
+                                <mat-error *ngIf="categoryFormControl.hasError('required')">
+                                    category name is <strong>required</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="inputfield">
+                            <mat-label>Sub Category</mat-label>
+                            <mat-form-field class="example-full-width">
+                                <input type="text" matInput [formControl]="subcategoryFormControl"
+                                    [errorStateMatcher]="matcher">
+                                <mat-error
+                                    *ngIf="subcategoryFormControl.hasError('subcategory') && !subcategoryFormControl.hasError('required')">
+                                    Please enter a valid sub category
+                                </mat-error>
+                                <mat-error *ngIf="subcategoryFormControl.hasError('required')">
+                                    sub category is <strong>required</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="button viewreciept">
+                        <button mat-raised-button>VIEW RECEIPT</button>
+                    </div>
+
+                    <div class="box-container d-flex align-items-center editdeletebtn justify-content-center mt-4">
+                        <button mat-raised-button class="btn btn1">
+                            <mat-icon>create</mat-icon>
+                            EDIT</button> &nbsp; &nbsp;
+                        <button mat-raised-button class="btn btn2"> 
+                            <mat-icon>delete_forever</mat-icon>
+                             DELETE </button>
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>

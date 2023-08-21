@@ -1,0 +1,84 @@
+<div class="loginpage">
+    <div class="container">
+        <div class="row d-flex justify-content-evenly">
+            <div class="col-md-5 box colmn1">
+
+                <form [formGroup]="formModule" (ngSubmit)="onLogin()" >
+
+                <div class="login"  >
+
+                    <h3>LOG IN</h3>
+
+                    <!-- <div class="mb-3">
+                        <input type="text" formControlName="userName"  class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                      </div>
+                    <div class="mb-3">
+                        <input type="password" formControlName="password" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                      </div> -->
+
+
+                    <div class="input-fieldset">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>User name</mat-label>
+                            <input type="text" formControlName="userName"  matInput 
+                                [errorStateMatcher]="matcher">
+                            <mat-error
+                                *ngIf="usernameFormControl.hasError('username') && !usernameFormControl.hasError('required')">
+                                Please enter a valid text username
+                            </mat-error>
+                            <mat-error *ngIf="usernameFormControl.hasError('required')">
+                                username is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="input-fieldset">
+                        <mat-form-field>
+                            <mat-label>password</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" [errorStateMatcher]="matcher" >
+                            <mat-error *ngIf="passwordFormControl.hasError('password') && !passwordFormControl.hasError('required')">
+                                Please enter a valid password
+                              </mat-error>
+                              <mat-error *ngIf="passwordFormControl.hasError('required')">
+                                password is <strong>required</strong>
+                              </mat-error>
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                          </mat-form-field>
+                    </div>
+
+                    <div class="contents">
+                        <div class="forgetpassword">
+                            <p>Forgot Your Password?</p>
+                        </div>
+                        <div class="btn">
+                            <button mat-raised-button color="accent" class="loginbtn">LOG IN</button>
+                        </div>
+                        <div class="loginwith">
+                            <p>Or log in with</p>
+                        </div>
+                        <div class="icons d-flex align-items-center justify-content-center mt-3">
+                            <a href="#">
+                                <img src="/assets/twittericon.png" alt="image" class="img-fluid icon icon1">
+                            </a>
+                            <a href="#">
+                                <img src="/assets/googleicon3.png" alt="image" class="img-fluid icon icon2">
+                            </a>
+                            <a href="#">
+                                <img src="/assets/linkdinicon.png" alt="image" class="img-fluid icon icon3">
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+                
+            </div>
+            <div class="col-md-5 box colmn2">
+                <div class="image">
+                    <!-- <img src="/assets/text.png" alt="image" class="img-fluid icon icon3"> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

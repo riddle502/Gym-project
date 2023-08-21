@@ -1,0 +1,269 @@
+<main>
+    <section class="createuser">
+        <div class="container">
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="content d-flex align-items-center">
+                            <div class="chevron">
+                                <i class="bi bi-chevron-left"></i>
+                            </div>
+                            <div class="box">
+                                <h4>MASTER CREATION</h4>
+                                <p>Create User</p>
+                            </div>
+                        </div>
+
+                        <div class="box-container mstrcreation d-flex justify-content-between">
+                            <div class="btncontainer mt-4">
+                                <div class="btn active" id="tab-1">ADD USER</div>
+                                <div class="btn" id="tab-2">ALL USER</div>
+                            </div>
+                            <div class="input d-flex align-items-center">
+                                <input type="text" class="form-control" id="exampleInputtext"
+                                    aria-describedby="textHelp" matInput (keyup)="applyFilter($event)"
+                                    placeholder="Ex. ium" #input>
+                                <button class="btnn btn1">Search</button>
+                                <div class="filter">
+                                    <i class="bi bi-funnel-fill"></i>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="tabcontent show" id="tab-1-content">
+
+
+        <section class="adduser mt-4">
+            <div class="container">
+                <div class="row row1">
+                    <div class="col-md-12 prduct">
+                        <p class="text-center">ADD USER</p>
+                    </div>
+                </div>
+                <div class="row row2">
+                    <form [formGroup]="formModule" (ngSubmit)="createUser()">
+                        <div mat-dialog-content>
+                            <div class="box-container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="inputfiled">
+                                            <h6>Username</h6>
+                                            <mat-form-field class="example-full-width">
+                                                <!-- <mat-label>Email</mat-label> -->
+                                                <input type="text" matInput [errorStateMatcher]="matcher"
+                                                    formControlName="userName">
+                                                <mat-error
+                                                    *ngIf="usernameFormControl.hasError('username') && !usernameFormControl.hasError('required')">
+                                                    Please enter a valid username
+                                                </mat-error>
+                                                <mat-error *ngIf="usernameFormControl.hasError('required')">
+                                                    username is <strong>required</strong>
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="inputfiled">
+                                            <h6>Email</h6>
+                                            <mat-form-field class="example-full-width">
+                                                <input type="email" matInput [errorStateMatcher]="matcher"
+                                                    formControlName="email">
+                                                <mat-error
+                                                    *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                                    Please enter a valid email address
+                                                </mat-error>
+                                                <mat-error *ngIf="emailFormControl.hasError('required')">
+                                                    Email is <strong>required</strong>
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-container">
+
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="inputfiled">
+                                            <h6>Mobile no.</h6>
+                                            <mat-form-field class="example-full-width">
+                                                <input type="tel" matInput [errorStateMatcher]="matcher"
+                                                    formControlName="mobileNo">
+                                                <mat-error
+                                                    *ngIf="mobileFormControl.hasError('mobile') && !mobileFormControl.hasError('required')">
+                                                    Please enter a valid mobile number
+                                                </mat-error>
+                                                <mat-error *ngIf="mobileFormControl.hasError('required')">
+                                                    mobile number is <strong>required</strong>
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="inputfiled">
+                                            <h6>User Type</h6>
+
+                                            <mat-form-field>
+                                              <mat-select
+                                                   formControlName="userType">
+                                                  <mat-option *ngFor="let type of userTypes" [value]="type._id">
+                                                      {{type.name}}
+                                                  </mat-option>
+                                              </mat-select>
+                                          </mat-form-field>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="box-container">
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="inputfiled">
+                                            <h6>Password</h6>
+                                            <mat-form-field class="example-full-width">
+                                                <input type="password" matInput [errorStateMatcher]="matcher"
+                                                    formControlName="password">
+                                                <mat-error
+                                                    *ngIf="passwordFormControl.hasError('password') && !passwordFormControl.hasError('required')">
+                                                    Please enter a valid password
+                                                </mat-error>
+                                                <mat-error *ngIf="passwordFormControl.hasError('required')">
+                                                    password is <strong>required</strong>
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-md-6">
+                                        <div class="inputfiled">
+                                            <h6>Designation</h6>
+                                            <mat-form-field class="example-full-width">
+                                                <input type="text" matInput [errorStateMatcher]="matcher"
+                                                    formControlName="Description">
+                                                <mat-error
+                                                    *ngIf="designationFormControl.hasError('designation') && !designationFormControl.hasError('required')">
+                                                    Please enter a valid designation
+                                                </mat-error>
+                                                <mat-error *ngIf="designationFormControl.hasError('required')">
+                                                    designation is <strong>Required</strong>
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <!-- <div class="box-container">
+
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <div class="inputfiled">
+                                            <h6>Select Store</h6>
+                                            <mat-form-field>
+                                                <mat-label>Select an option</mat-label>
+                                                <mat-select disableRipple formControlName="selectStore">
+                                                    <mat-option value="1">Option 1</mat-option>
+                                                    <mat-option value="2">Option 2</mat-option>
+                                                    <mat-option value="3">Option 3</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="inputfiled">
+                                            <h6>Status</h6>
+                                            <mat-form-field class="example-full-width">
+                                                <input type="text" matInput [errorStateMatcher]="matcher"
+                                                    formControlName="Status">
+                                                <mat-error
+                                                    *ngIf="statusFormControl.hasError('status') && !statusFormControl.hasError('required')">
+                                                    Please enter a valid Status
+                                                </mat-error>
+                                                <mat-error *ngIf="statusFormControl.hasError('required')">
+                                                    Status is <strong>required</strong>
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="button text-center">
+                                <button class=" w-100" mat-raised-button>ADD USER</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <div class="tabcontent" id="tab-2-content">
+
+        <section class="addnewproduct mt-4">
+            <div class="container">
+                <div class="row row2 d-flex justify-content-evenly">
+                    <div class="col-md-12">
+                        <section class="TABLE matTable mt-4">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                                        <!-- <ng-container matColumnDef="position">
+                                            <th mat-header-cell *matHeaderCellDef> No. </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                        </ng-container> -->
+
+                                        <ng-container matColumnDef="name">
+                                            <th mat-header-cell *matHeaderCellDef> Name </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.userName}} </td>
+                                        </ng-container>
+
+                                        <ng-container matColumnDef="email">
+                                            <th mat-header-cell *matHeaderCellDef> Email </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                                        </ng-container>
+
+                                        <ng-container matColumnDef="mobileNo">
+                                            <th mat-header-cell *matHeaderCellDef> Mobile Noumber</th>
+                                            <td mat-cell *matCellDef="let element"> {{element.mobileNo}} </td>
+                                        </ng-container>
+
+                                        <ng-container matColumnDef="isActive">
+                                          <th mat-header-cell *matHeaderCellDef> Is Active</th>
+                                          <td mat-cell *matCellDef="let element"> {{element.isActive}} </td>
+                                      </ng-container>
+
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                                        <tr class="mat-row" *matNoDataRow>
+                                            <td class="mat-cell" colspan="4">No data matching the filter</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+</main>

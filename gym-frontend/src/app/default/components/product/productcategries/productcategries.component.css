@@ -1,0 +1,30 @@
+
+.categrayform{
+    padding: 23px;
+}
+.viewreciept{
+    width: 79%;
+    margin: auto;
+}
+.viewreciept button{
+    background: #21324E;
+    color: white;
+    width: 100%;
+    padding: 22px 10px;
+}
+.editdeletebtn{
+
+}
+.editdeletebtn .btn{
+    color: black;
+    padding: 20px 31px;
+    cursor: pointer;
+}
+.editdeletebtn .btn1{
+    background: #A8DDFC;
+}
+.editdeletebtn .btn2{
+background-color: 
+#C81B1B;
+color: white;
+}

@@ -1,0 +1,82 @@
+.orderbystore::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url(/assets/bgimg.png) no-repeat center center/cover;
+    height: 284px;
+    width: 251px;
+    z-index: -1;
+    ;
+}
+
+/* Structure */
+table {
+    width: 100%;
+    border-radius: 46px;
+    overflow-x: scroll;
+}
+
+
+ .input {
+    width: 400px;
+    margin-top: 20px;
+    position: relative;
+}
+
+ .input input {
+    border-radius: 44px;
+    padding: 9px 23px;
+    box-shadow: 0px 0px 8px -4px black !important;
+}
+
+ .chevron {
+    position: relative;
+    top: -15px;
+    left: -16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+ .btn {
+    border: 1px solid gainsboro;
+    border-radius: 44px;
+    padding: 9px 23px;
+    background: #21324E;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 141px
+}
+
+.matTable  .row
+{
+    overflow: scroll;
+    /* background: #21324E; */
+    border-top-left-radius: 33px;
+    border-top-right-radius: 33px;
+    padding: 17px 0px;
+}
+@media(max-width:400px) {
+    .matTable {
+        overflow-x: scroll;
+    }
+}
+@media(max-width:378px) {
+    section {
+        padding: 23px;
+    }
+}
+
+
+@media(max-width:518px) {
+ .input {
+        width: 100%;
+    }
+
+    mat-form-field {
+        width: 100% !important;
+    }
+}

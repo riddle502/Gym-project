@@ -1,0 +1,254 @@
+.product .chevron {
+  position: relative;
+  top: -4px;
+  left: -16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.product::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url(/assets/bgimg.png) no-repeat center center/cover;
+  height: 284px;
+  width: 251px;
+  z-index: -1;
+  ;
+}
+
+.product .btncontainer {
+  box-shadow: -2px -1px 11px -7px black;
+  background: white;
+  border: 1px solid gainsboro;
+  padding: 4px;
+  border-radius: 70px;
+  width: 373px;
+}
+#customFile{
+  background: lavender;
+  color: gray;
+  border-bottom-right-radius: 8px;
+  cursor: pointer;
+}
+.product .btn {
+  padding: 7px 34px;
+  border-radius: 37px;
+  color: gray;
+}
+
+.product .active {
+  border: 1px solid gainsboro;
+  color: white;
+  background: #21324E;
+}
+
+.product #btn2 {
+  margin-right: 19px;
+  margin-left: 17px;
+}
+
+.addnewproduct {
+  max-width: 950px;
+  height: 554px;
+  overflow: scroll;
+}
+.addnewproduct .row1 {
+  border: 1px solid gainsboro;
+  padding: 15px 11px;
+  border-top-left-radius: 34px;
+  border-top-right-radius: 34px;
+  background: #21324E;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.addnewproduct .row2 {
+  border: 1px solid gainsboro;
+  background: white;
+  padding: 15px 20px;
+}
+.t2contnt .row2{
+  padding: unset !important;
+}
+.addnewproduct .row2 .left p {
+  color: #21324E;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.addnewproduct .row2 .right h6 {
+  font-weight: bold;
+  color: gray;
+}
+
+.addnewproduct .row2 .right .image {
+  padding-top: 60px;
+}
+.formdata .addproduct{
+  border: 1px solid gainsboro;
+  margin-top: 10px !important;
+  padding: 12px;
+  border-radius: 47px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  width: 92%;
+  margin: 0px 15px;
+  background: #21324E;
+  color: white;
+}
+.addnewproduct .row2 .right .content {
+  color: gray;
+  margin-left: 29px;
+}
+
+.addnewproduct .row2 .right .content .b {
+  line-height: 2;
+}
+
+.addnewproduct .row2 .left {
+  flex: 150px;
+}
+
+.addnewproduct .row2 .right {
+  flex: 150px;
+}
+
+.addnewproduct .row2 .right .image {
+  width: 80%;
+  margin: auto;
+}
+
+.barcode h6 {
+  font-weight: bold;
+  color: gray;
+}
+
+#tab-1-content,
+#tab-2-content {
+  display: none;
+}
+.show {
+  display: block !important;
+}
+
+.addnewproduct .row2 .right .buttons .btn {
+  border: 1px solid gainsboro;
+  margin-top: 10px !important;
+  padding: 12px;
+  border-radius: 47px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  width: 92%;
+  margin: 0px 15px;
+}
+
+.addnewproduct .row2 .right .buttons .bt1 {
+  background: #21324E;
+  color: white;
+}
+
+.addnewproduct .row2 .right .buttons .bt2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #21324E;
+}
+
+
+.addnewproduct .inputfield {
+  width: 258px;
+}
+
+.addnewproduct .inputfield input {
+  background: #dcdcdc75;
+}
+
+.addnewproduct .inputfield select {
+  background: #dcdcdc75;
+}
+
+.addnewproduct .inputfield2 {
+  margin-left: 24px;
+}
+
+.addnewproduct textarea {
+  background: #dcdcdc75;
+  resize: none;
+}
+
+.addnewproduct .prduct p {
+  cursor: pointer;
+}
+
+.addnewproduct .prduct p {
+  cursor: pointer;
+}
+
+.addnewproduct .prdct {
+  width: 75px;
+}
+
+.addnewproduct #actioni {
+  margin-top: 12px
+}
+
+.addnewproduct #paddingtop {
+  position: relative;
+  top: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:1110px) {
+  .addnewproduct .row1 {
+      width: 100%;
+  }
+
+  .addnewproduct .row2 {
+      width: 100%;
+      overflow: scroll;
+  }
+}
+
+@media(max-width:418px) {
+  .product .box h4 {
+      color: #E2B236;
+  }
+
+  .product .box p {
+      color: #E2B236;
+  }
+}
+
+@media(max-width:378px) {
+  main {
+      padding: 23px;
+  }
+
+  .product .content {
+      padding-top: 25px;
+  }
+}
+
+@media(max-width:510px) {
+  .product .btncontainer {
+      flex-direction: column;
+      display: flex;
+      padding: 15px;
+      width: 100%;
+  }
+}

@@ -1,0 +1,302 @@
+.createuser .chevron {
+    position: relative;
+    top: -4px;
+    left: -16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.createuser::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url(/assets/bgimg.png) no-repeat center center/cover;
+    height: 284px;
+    width: 251px;
+    z-index: -1;
+    ;
+}
+.createuser .btncontainer {
+    box-shadow: -2px -1px 11px -7px black;
+    background: white;
+    border: 1px solid gainsboro;
+    padding: 4px;
+    border-radius: 70px;
+    width: 300px;
+}
+
+.createuser .btn {
+    padding: 7px 34px;
+    border-radius: 37px;
+    color: gray;
+}
+
+.createuser .active {
+    border: 1px solid gainsboro;
+    color: white;
+    background: #21324E;
+}
+
+.createuser #btn2 {
+    margin-right: 19px;
+    margin-left: 17px;
+}
+
+
+.adduser .row1 {
+    border: 1px solid gainsboro;
+    max-width: 800px;
+    margin: auto;
+    padding: 15px 11px;
+    border-top-left-radius: 34px;
+    border-top-right-radius: 34px;
+    background: #21324E;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+.adduser .h6{
+ color: gray;
+ padding-left: 14px;
+}
+
+.adduser .row2 {
+    border: 1px solid gainsboro;
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 15px 20px;
+}
+
+.adduser .row2 .left p {
+    color: #21324E;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.adduser .row2 .right h6 {
+    font-weight: bold;
+    color: gray;
+}
+
+.adduser .row2 .right .image {
+    padding-top: 60px;
+}
+
+.adduser .row2 .right .content {
+    color: gray;
+    margin-left: 29px;
+}
+
+.adduser .row2 .right .content .b {
+    line-height: 2;
+}
+
+.adduser .row2 .left {
+    flex: 150px;
+}
+
+.adduser .row2 .right {
+    flex: 150px;
+}
+
+.adduser .row2 .right .image {
+    width: 312px;
+    margin: auto;
+}
+
+.barcode h6 {
+    font-weight: bold;
+    color: gray;
+}
+
+#tab-1-content,
+#tab-2-content {
+    display: none;
+}
+.show {
+    display: block !important;
+}
+
+.adduser .row2 .right .buttons .btn {
+    border: 1px solid gainsboro;
+    margin-top: 10px !important;
+    padding: 12px;
+    border-radius: 47px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 92%;
+    margin: 0px 15px;
+}
+
+.adduser .row2 .right .buttons .bt1 {
+    background: #21324E;
+    color: white;
+}
+
+.adduser .row2 .right .buttons .bt2 {
+    background-color: white;
+    color: black;
+    border: 2px solid #21324E;
+}
+
+
+.adduser .inputfield {
+    width: 258px;
+}
+
+.adduser .inputfield input {
+    background: #dcdcdc75;
+}
+
+.adduser .inputfield select {
+    background: #dcdcdc75;
+}
+
+.adduser .inputfield2 {
+    margin-left: 24px;
+}
+
+.adduser textarea {
+    background: #dcdcdc75;
+    resize: none;
+}
+
+.adduser .prduct p {
+    cursor: pointer;
+}
+
+.adduser .prduct p {
+    cursor: pointer;
+}
+
+.adduser .prdct {
+    width: 75px;
+}
+
+.adduser #actioni {
+    margin-top: 12px
+}
+
+.adduser #paddingtop {
+    position: relative;
+    top: 16px;
+}
+.adduser button{
+    background: #21324E;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 23px 11px;
+  }
+
+  .TABLE  .row
+  {
+      /* background: #21324E; */
+      border-top-left-radius: 33px;
+      border-top-right-radius: 33px;
+      padding: 17px 0px;
+      height: 430px;
+      overflow: scroll;
+  }
+
+  @media(max-width:400px) {
+    .matTable {
+        overflow-x: scroll;
+    }
+}
+
+
+.mstrcreation .input {
+    margin-right: 81px;
+    width: 400px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.mstrcreation .input input {
+    border-radius: 44px;
+    padding: 9px 23px;
+    box-shadow: 0px 0px 8px -4px black !important;
+}
+.mstrcreation .btnn {
+    border: 1px solid gainsboro;
+    border-radius: 44px;
+    padding: 9px 23px;
+    background: #21324E;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 141px
+}
+.filter{
+    position: absolute;
+    top: 4px;
+    right: -62px;
+    background: #21324E;
+    color: white;
+    padding: 10px 17px;
+    border-radius: 29px;
+    cursor: pointer;
+}
+
+@media(max-width:518px) {
+    .mstrcreation .input {
+        width: 100%;
+    }
+}
+
+
+
+
+
+@media(max-width:1110px) {
+    .adduser .row1 {
+        width: 100%;
+    }
+
+    .adduser .row2 {
+        width: 100%;
+        overflow: scroll;
+    }
+}
+
+@media(max-width:418px) {
+    .createuser .box h4 {
+        color: #E2B236;
+    }
+
+    .createuser .box p {
+        color: #E2B236;
+    }
+}
+
+@media(max-width:378px) {
+    main {
+        padding: 23px;
+    }
+
+    .createuser .content {
+        padding-top: 25px;
+    }
+}
+
+@media(max-width:510px) {
+    .createuser .btncontainer {
+        flex-direction: column;
+        display: flex;
+        padding: 15px;
+        width: 100%;
+    }
+}
+@media(max-width:1252px) {
+    .createuser .box-container{
+        flex-direction: column;
+    }
+}

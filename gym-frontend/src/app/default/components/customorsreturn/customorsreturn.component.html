@@ -1,0 +1,309 @@
+<main>
+    <section class="product">
+        <div class="container">
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="content d-flex align-items-center">
+                            <div class="chevron">
+                                <i class="bi bi-chevron-left"></i>
+                            </div>
+                            <div class="box">
+                                <h4>CUSTOMERS RETURNS</h4>
+                            </div>
+                        </div>
+
+                        <div class="btncontainer mt-4">
+                            <div class="btn active" id="tab-1">ADD RETURN</div>
+                            <div class="btn" id="tab-2">ALL RETURNS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="tabcontent show" id="tab-1-content">
+
+
+        <section class="addnewproduct mt-4 customreturn">
+            <div class="container">
+                <div class="row row1">
+                    <div class="col-md-12 prduct">
+                        <p class="text-center">ADD RETURN</p>
+                    </div>
+                </div>
+                <div class="row row2 d-flex justify-content-evenly">
+                    <div class="col-md-12 left">
+
+                        <div class="box-container">
+                            <div class="select">
+                                <h6>Select an option</h6>
+                                <mat-form-field>
+                                    <mat-select disableRipple>
+                                        <mat-option value="1">Option 1</mat-option>
+                                        <mat-option value="2">Option 2</mat-option>
+                                        <mat-option value="3">Option 3</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="box-container">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="inputfiled">
+                                        <h6>Date</h6>
+                                        <mat-form-field color="accent">
+                                            <input matInput [matDatepicker]="picker1" [formControl]="dateFormControl" [errorStateMatcher]="matcher">
+                                            <mat-error *ngIf="dateFormControl.hasError('date') && !dateFormControl.hasError('required')">
+                                                Please enter a valid to date
+                                              </mat-error>
+                                              <mat-error *ngIf="dateFormControl.hasError('required')">
+                                                date is <strong>required</strong>
+                                              </mat-error>
+                                            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker1></mat-datepicker>
+                                          </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="inputfiled">
+                                        <h6>Custom tax</h6>
+                                        <mat-form-field class="example-full-width">
+                                            <input type="text" matInput [formControl]="customtaxFormControl" [errorStateMatcher]="matcher" >
+                                            <mat-error *ngIf="customtaxFormControl.hasError('customtax') && !customtaxFormControl.hasError('required')">
+                                              Please enter a valid custom tax
+                                            </mat-error>
+                                            <mat-error *ngIf="customtaxFormControl.hasError('required')">
+                                                custom tax is <strong>required</strong>
+                                            </mat-error>
+                                          </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="inputfiled">
+                                        <h6>Discount</h6>
+                                        <mat-form-field class="example-full-width">
+                                            <input type="text" matInput [formControl]="discountFormControl" [errorStateMatcher]="matcher" >
+                                            <mat-error *ngIf="discountFormControl.hasError('discount') && !discountFormControl.hasError('required')">
+                                              Please enter a valid discount
+                                            </mat-error>
+                                            <mat-error *ngIf="discountFormControl.hasError('required')">
+                                                discount is <strong>required</strong>
+                                            </mat-error>
+                                          </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="inputfiled">
+                                        <h6>Shipping</h6>
+                                        <mat-form-field class="example-full-width">
+                                            <input type="text" matInput [formControl]="shipingFormControl" [errorStateMatcher]="matcher" >
+                                            <mat-error *ngIf="shipingFormControl.hasError('shiping') && !shipingFormControl.hasError('required')">
+                                              Please enter a valid shiping
+                                            </mat-error>
+                                            <mat-error *ngIf="shipingFormControl.hasError('required')">
+                                                shiping is <strong>required</strong>
+                                            </mat-error>
+                                          </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="inputfiled">
+                                        <h6>Status</h6>
+                                        <mat-form-field class="example-full-width">
+                                            <input type="text" matInput [formControl]="statusFormControl" [errorStateMatcher]="matcher" >
+                                            <mat-error *ngIf="statusFormControl.hasError('status') && !statusFormControl.hasError('required')">
+                                              Please enter a valid status
+                                            </mat-error>
+                                            <mat-error *ngIf="statusFormControl.hasError('required')">
+                                                status is <strong>required</strong>
+                                            </mat-error>
+                                          </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-container">
+                            <div class="inputbox">
+                                <mat-label>Description</mat-label>
+                                <div class="form-floating mt-3">
+                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                                        style="height: 100px"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-container">
+                            <div class="button mt-4">
+                                <button mat-raised-button>ADD EXPENSE</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <div class="tabcontent cusmoreturns" id="tab-2-content">
+        <section class="addnewproduct mt-4">
+            <div class="container">
+                <div class="row row1">
+                    <div class="col-md-12 prduct">
+                        <p class="text-center">PRODUCT LIST</p>
+                    </div>
+                </div>
+                <div class="row row2 d-flex justify-content-evenly">
+
+                    <div class="col-md-12">
+                        <!-- <div class="headings d-flex align-items-center justify-content-between">
+                        <th>S.no</th>
+                        <th>Product Image</th>
+                        <th>Added by Name</th>
+                        <th>Category</th>
+                        <th>GST</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </div>
+                    <div class="rowcontent">
+                        <td>1</td>
+                        <td>
+                            <img src="" alt="image" class="img-fluid">
+                        </td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>
+
+                        </td>
+                    </div> -->
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr class="text-center">
+                                    <th>S.no</th>
+                                    <th>Product Image</th>
+                                    <th>Added by Name</th>
+                                    <th>Category</th>
+                                    <th>GST</th>
+                                    <th>Price</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-center">
+                                    <td id="paddingtop">1</td>
+                                    <td>
+                                        <img src="assets/product1.png" alt="image" class="img-fluid prdct">
+                                    </td>
+                                    <td id="paddingtop">-</td>
+                                    <td id="paddingtop">-</td>
+                                    <td id="paddingtop">-</td>
+                                    <td id="paddingtop">-</td>
+                                    <td>
+                                        <button mat-raised-button [matMenuTriggerFor]="belowMenu"
+                                            aria-label="Example icon-button with a menu" id="actioni">Action
+                                            <mat-icon>keyboard_arrow_down</mat-icon>
+                                        </button>
+                                        <mat-menu #belowMenu="matMenu" yPosition="below">
+                                            <button mat-menu-item>
+                                                <span>Print barcode</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>Edit Product</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>Delete Product</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>View Product</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>Product Category</span>
+                                            </button>
+                                        </mat-menu>
+                                    </td>
+                                </tr>
+                                <tr class="text-center">
+                                    <td id="paddingtop">2</td>
+                                    <td>
+                                        <img src="assets/product2.png" alt="image" class="img-fluid prdct">
+                                    </td>
+                                    <td id="paddingtop">-</td>
+                                    <td id="paddingtop">-</td>
+                                    <td id="paddingtop">-</td>
+                                    <td id="paddingtop">-</td>
+                                    <td>
+                                        <button mat-raised-button [matMenuTriggerFor]="belowMenu"
+                                            aria-label="Example icon-button with a menu" id="actioni">Action
+                                            <mat-icon>keyboard_arrow_down</mat-icon>
+                                        </button>
+                                        <mat-menu #belowMenu="matMenu" yPosition="below">
+                                            <button mat-menu-item>
+                                                <span>Print barcode</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>Edit Product</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>Delete Product</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>View Product</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>Product Category</span>
+                                            </button>
+                                        </mat-menu>
+                                    </td>
+                                </tr>
+                                <tr class="text-center">
+                                    <td id="paddingtop">3</td>
+                                    <td>
+                                        <img src="assets/product3.png" alt="image" class="img-fluid prdct">
+                                    </td>
+                                    <td id="paddingtop">-</td>
+                                    <td id="paddingtop">-</td>
+                                    <td id="paddingtop">-</td>
+                                    <td id="paddingtop">-</td>
+                                    <td>
+                                        <button mat-raised-button [matMenuTriggerFor]="belowMenu"
+                                            aria-label="Example icon-button with a menu" id="actioni">Action
+                                            <mat-icon>keyboard_arrow_down</mat-icon>
+                                        </button>
+                                        <mat-menu #belowMenu="matMenu" yPosition="below">
+                                            <button mat-menu-item>
+                                                <span>Print barcode</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>Edit Product</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>Delete Product</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>View Product</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>Product Category</span>
+                                            </button>
+                                        </mat-menu>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+</main>

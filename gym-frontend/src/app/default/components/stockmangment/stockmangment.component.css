@@ -1,0 +1,96 @@
+.stockmangment .chevron {
+    position: relative;
+    top: -4px;
+    left: -16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.stockmangment::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url(/assets/bgimg.png) no-repeat center center/cover;
+    height: 284px;
+    width: 251px;
+    z-index: -1;
+    ;
+}
+
+/* Structure */
+table {
+    width: 100%;
+    border-radius: 46px;
+    overflow-x: scroll;
+}
+
+
+.TABLE
+{
+    margin-top: 44px !important;
+}
+.TABLE  .row
+{
+    /* background: #21324E; */
+    border-top-left-radius: 33px;
+    border-top-right-radius: 33px;
+    padding: 17px 0px;
+    height: 430px;
+    overflow: scroll;
+}
+.matformfield h6{
+    font-weight: bold;
+}
+.matformfield{
+    margin-left: 17px;
+}
+
+.stockmangment .buttons {
+    width: 520px;
+}
+.stockmangment .buttons .btn {
+    background: #21324E;
+    color: white;
+    border: 1px solid gainsboro;
+    margin-top: 10px !important;
+    padding: 12px;
+    border-radius: 47px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 92%;
+    margin: 0px 15px;
+}
+
+
+@media(max-width:400px) {
+    .matTable {
+        overflow-x: scroll;
+    }
+}
+@media(max-width:418px) {
+    .sale .box h4 {
+        color: #E2B236;
+    }
+
+    .sale .box p {
+        color: #E2B236;
+    }
+}
+@media(max-width:378px) {
+    section {
+        padding: 23px;
+    }
+    .sale .content{
+        padding-top: 25px;
+    }
+}
+@media(max-width:924px) {
+    .stockmangment .buttons{
+        width: 100%;
+    }
+}
+@media(max-width:612px) {
+    .stockmangment .buttons{
+       flex-direction: column;
+    }
+}

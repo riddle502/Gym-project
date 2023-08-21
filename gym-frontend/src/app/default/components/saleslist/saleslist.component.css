@@ -1,0 +1,174 @@
+.paymentmode::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url(/assets/bgimg.png) no-repeat center center/cover;
+    height: 284px;
+    width: 251px;
+    z-index: -1;
+}
+
+
+.paymentmode .button{
+ position: relative;
+}
+.paymentmode button{
+    margin-right: 14px;
+    background: #21324E;
+    color: white;
+    width: 177px;
+    border-radius: 44px;
+}
+.paymentmode mat-icon{
+    position: absolute;
+    top: 6px;
+    left: 145px;
+    right: 0;
+    color: white;
+    cursor: pointer;
+}
+.paymentmode .allreport{
+    margin-right: 212px;
+}
+.paymentmode .row1{
+    border: 1px solid gainsboro;
+    max-width: 972px;
+    padding: 18px 33px;
+    border-radius: 67px;
+    background: #21324E;
+}
+.paymentmode .row1 .box1 img{
+    width: 14px;
+}
+.paymentmode .row1 .box2 img{
+    width: 40px;
+}
+.paymentmode .row4{
+    border: 1px solid gainsboro;
+    max-width: 972px;
+    height: 450px;
+    overflow-y: scroll;
+    background: white;
+    padding: 44px;
+    border-bottom-left-radius: 28px !important;
+    border-bottom-right-radius: 28px !important;
+}
+.paymentmode .row3{
+    border-top-left-radius: 28px !important;
+    border-top-right-radius: 28px !important;
+    border-radius: unset ;
+}
+.paymentmode .cvv{
+    /* margin-right: 12px;
+    width: 200px; */
+}
+.paymentmode .row1 span{
+    letter-spacing: 4px;
+    font-size: 18px;
+    margin-left: 15px;
+    position: relative;
+    top: 3px;
+    color: white;
+    font-weight: bold;
+}
+.paymentmode .row1 .box2 img{
+    margin-right: 48px;
+    border-radius: 44px;
+    object-fit: cover;
+}
+.paymentmode .row1 .box2 .mster{
+    margin-right: 15px;
+    border-radius: 44px;
+    object-fit: cover;
+}
+
+.selectProducts #right span{
+    padding: 0px 20px;
+    font-size: 21px;
+    cursor: pointer;
+}
+.selectProducts #right .plus{
+    border: none;
+    border-radius: 22px;
+    padding: 0px 10px;
+    background: #21324E;
+    color: white;
+}
+.selectProducts #right .minus{
+    border: none;
+    border-radius: 22px;
+    padding: 0px 10px;
+    background: #21324E;
+    color: white;
+}
+.selectProducts #right .content{
+margin-top: 9px;
+margin-bottom: 9px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:378px) {
+    section {
+        padding: 23px;
+    }
+}
+@media(max-width:546px) {
+    .paymentmode .row4{
+        padding: 20px;
+    }
+}
+@media(max-width:462px) {
+    .paymentmode .row1 .box2{
+        display: flex;
+        align-items: center;
+    }
+}
+@media(max-width:352px) {
+    .paymentmode .box-container h2{
+        color: #F1BE41;
+        font-weight: bold;
+        letter-spacing: 3px;
+    }
+}
+@media(max-width:430px) {
+    .paymentmode button {
+        margin-right: 14px;
+        background: #21324E;
+        color: white;
+        width: 177px;
+        border-radius: 44px;
+    }
+    .paymentmode .box-container{
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+    .paymentmode .allreport {
+        margin-right: unset !important;
+    }
+}

@@ -1,0 +1,212 @@
+<main>
+
+
+    <section class="paymentmode">
+        <div class="container">
+            <div class="box-container d-flex align-items-center justify-content-between">
+                <div class="heading">
+                    <h2>PAYMENT MODE </h2>
+                </div>
+                <div class="allreport d-flex align-items-center">
+                    <div class="button" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                        <button mat-raised-button>ALL REPORTS
+                        </button>
+                        <mat-icon>keyboard_arrow_down</mat-icon>
+                    </div>
+                    <div class="filter">
+                        <i class="bi bi-funnel-fill"></i>
+                    </div>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>
+                            <mat-icon>dialpad</mat-icon>
+                            <span>Redial</span>
+                        </button>
+                        <button mat-menu-item>
+                            <mat-icon>notifications_off</mat-icon>
+                            <span>Disable alerts</span>
+                        </button>
+                        <button mat-menu-item>
+                            <mat-icon>notifications_off</mat-icon>
+                            <span>Disable alerts</span>
+                        </button>
+                        <button mat-menu-item>
+                            <mat-icon>dialpad</mat-icon>
+                            <span>Redial</span>
+                        </button>
+                    </mat-menu>
+                </div>
+            </div>
+
+
+            <div class="row row1 mt-4">
+                <div class="col boxcontent box1 text-start">
+                    <img src="/assets/circleicon.png" alt="image" class="img-fluid">
+                    <span>UPI</span>
+                </div>
+                <div class="col boxcontent box2 text-end">
+                    <img src="/assets/visacard.png" alt="image" class="img-fluid">
+                </div>
+            </div>
+
+            <div class="row row1 row2 mt-4">
+                <div class="col boxcontent box1 text-start">
+                    <img src="/assets/circleicon.png" alt="image" class="img-fluid">
+                    <span>DEBIT CARD</span>
+                </div>
+                <div class="col boxcontent box2 text-end">
+                    <img src="/assets/mster.png" alt="image" class="img-fluid mster">
+                    <img src="/assets/upi.png" alt="image" class="img-fluid">
+                </div>
+            </div>
+
+            <div class="row row1 row3 mt-4">
+                <div class="col boxcontent box1 text-start">
+                    <img src="/assets/circleicon.png" alt="image" class="img-fluid">
+                    <span>CREDIT CARD</span>
+                </div>
+                <div class="col boxcontent box2 text-end">
+                    <img src="/assets/mster.png" alt="image" class="img-fluid mster">
+                    <img src="/assets/upi.png" alt="image" class="img-fluid">
+                </div>
+            </div>
+
+            <div class="row row4">
+                <div class="col-md-6">
+
+                    <form class="formfieldset" [formGroup]="formModule" (ngSubmit)="creditcard()">
+
+                        <div class="field1 field">
+                            <h6>Card Holder Name</h6>
+                            <mat-form-field class="example-full-width">
+                                <input type="text" matInput [formControl]="nameFormControl"
+                                    [errorStateMatcher]="matcher" formControlName="cardHoldername">
+                                <mat-error
+                                    *ngIf="nameFormControl.hasError('name') && !nameFormControl.hasError('required')">
+                                    Please enter a valid name
+                                </mat-error>
+                                <mat-error *ngIf="nameFormControl.hasError('required')">
+                                    name is <strong>required</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="field1 field">
+                            <h6>Card Number</h6>
+                            <mat-form-field class="example-full-width">
+                                <input type="number" matInput [formControl]="numberFormControl"
+                                    [errorStateMatcher]="matcher" formControlName="cardNumber" >
+                                <mat-error
+                                    *ngIf="numberFormControl.hasError('number') && !numberFormControl.hasError('required')">
+                                    Please enter a valid number
+                                </mat-error>
+                                <mat-error *ngIf="numberFormControl.hasError('required')">
+                                    number is <strong>required</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="field1 field cvv">
+                                    <h6>Expiry Date</h6>
+                                    <mat-form-field color="accent">
+                                        <input matInput [matDatepicker]="picker1" [formControl]="expiredateFormControl" [errorStateMatcher]="matcher" formControlName="expireDate">
+                                        <mat-error *ngIf="expiredateFormControl.hasError('expiredate') && !expiredateFormControl.hasError('required')">
+                                            Please enter a valid to date
+                                          </mat-error>
+                                          <mat-error *ngIf="expiredateFormControl.hasError('required')">
+                                            date is <strong>required</strong>
+                                          </mat-error>
+                                        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker1></mat-datepicker>
+                                      </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="field1 field cvv">
+                                    <h6>CVV</h6>
+                                    <mat-form-field class="example-full-width">
+                                        <input type="text" matInput [formControl]="cvvFormControl"
+                                            [errorStateMatcher]="matcher" formControlName="cvv">
+                                        <mat-error
+                                            *ngIf="cvvFormControl.hasError('cvv') && !cvvFormControl.hasError('required')">
+                                            Please enter a valid cvv
+                                        </mat-error>
+                                        <mat-error *ngIf="cvvFormControl.hasError('required')">
+                                            cvv is <strong>required</strong>
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="box-container d-flex align-items-center">
+                            <div class="field1 field cvv">
+                                <h6>Expiry Date</h6>
+                                <mat-form-field color="accent">
+                                    <input matInput [matDatepicker]="picker1">
+                                    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker1></mat-datepicker>
+                                  </mat-form-field>
+                            </div>
+                            <div class="field1 field cvv">
+                                <h6>CVV</h6>
+                                <mat-form-field class="example-full-width">
+                                    <input type="text" matInput [formControl]="cvvFormControl"
+                                        [errorStateMatcher]="matcher">
+                                    <mat-error
+                                        *ngIf="cvvFormControl.hasError('cvv') && !cvvFormControl.hasError('required')">
+                                        Please enter a valid cvv
+                                    </mat-error>
+                                    <mat-error *ngIf="cvvFormControl.hasError('required')">
+                                        cvv is <strong>required</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div> -->
+                        <div class="button text-center mt-3">
+                            <button mat-raised-button class="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 mt-4">
+                    <img src="/assets/card.png" alt="image" class="img-fluid mster">
+                </div>
+            </div>
+
+            <div class="row row1 row5 mt-4">
+                <div class="col-md-12 boxcontent box1 text-start">
+                    <img src="/assets/circleicon.png" alt="image" class="img-fluid">
+                    <span>CASH ON DELIVERY</span>
+                </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+</main>

@@ -1,0 +1,277 @@
+<div class="bilist" >
+    <i class="bi bi-list" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"></i>
+</div>
+<aside class="sidenavb" id="sidenav">
+    <div class="sidenavbar">
+
+        <h4 id="dash" routerLink="dashboard">DASHBOARD</h4>
+
+
+        <div class="box">
+            <div class="d-flex align-items-center" routerLink="dashboard">
+                <img src="/assets/dashicon.png" alt="image" class="img-fluid sideicon">
+                <span>Dashboard</span>
+            </div>
+        </div>
+
+        <li class="item">
+            <p class="data">
+                <img src="/assets/saleicon.png" alt="image" class="img-fluid sideicon">
+                <span>Sales</span>
+                <i class="bi bi-chevron-right dropdown"></i>
+            </p>
+            <div class="nestedata">
+                <a  routerLink="sale">
+                    <div class="d-flex align-items-center">
+                        <span>Point of Sales</span> <br>
+                    </div>
+                </a>
+                <!-- <a routerLink="#">
+                    <div class="d-flex align-items-center">
+                        <span>Sales List</span> <br>
+                    </div>
+                </a> -->
+            </div>
+        </li>
+
+        <div class="box">
+            <div class="d-flex align-items-center" routerLink="product">
+                <img src="/assets/produticon.png" alt="image" class="img-fluid sideicon">
+                <span>Products</span>
+            </div>
+        </div>
+        <div class="box">
+          <div class="d-flex align-items-center" routerLink="productassign">
+              <img src="/assets/produticon.png" alt="image" class="img-fluid sideicon">
+              <span>Products Assign</span>
+          </div>
+      </div>
+        <div class="box">
+            <div class="d-flex align-items-center" routerLink="stockmangment">
+                <img src="/assets/produticon.png" alt="image" class="img-fluid sideicon">
+                <span>Stock Management</span>
+            </div>
+        </div>
+        <li class="item">
+            <p class="data">
+                <img src="/assets/saleicon.png" alt="image" class="img-fluid sideicon">
+                <span>Master Creation</span>
+                <i class="bi bi-chevron-right dropdown"></i>
+            </p>
+            <div class="nestedata">
+                <a  routerLink="createstore">
+                    <div class="d-flex align-items-center">
+                        <span>Create Store</span> <br>
+                    </div>
+                </a>
+                <a routerLink="creatuser">
+                    <div class="d-flex align-items-center">
+                        <span>Create User</span> <br>
+                    </div>
+                </a>
+            </div>
+        </li>
+        <div class="box" routerLink="orderbystore">
+            <div class="d-flex align-items-center">
+                <img src="/assets/ordericon.png" alt="image" class="img-fluid sideicon">
+                <span>Order By Store</span>
+            </div>
+        </div>
+        <div class="box" routerLink="paymentmode">
+            <div class="d-flex align-items-center">
+                <img src="/assets/paymticon.png" alt="image" class="img-fluid sideicon">
+                <span>Payment Mode</span>
+            </div>
+        </div>
+            <li class="item">
+                <p class="data">
+                    <img src="/assets/saleicon.png" alt="image" class="img-fluid sideicon">
+                    <span>Reports</span>
+                    <i class="bi bi-chevron-right dropdown"></i>
+                </p>
+                <div class="nestedata">
+                    <a routerLink="#">
+                        <div class="d-flex align-items-center">
+                            <span>Stock history</span> <br>
+                        </div>
+                    </a>
+                    <a routerLink="currentstock">
+                        <div class="d-flex align-items-center">
+                            <span>Current Stock</span> <br>
+                        </div>
+                    </a>
+                    <a routerLink="salesreports">
+                        <div class="d-flex align-items-center">
+                            <span>Sales Reports</span> <br>
+                        </div>
+                    </a>
+                    <a routerLink="transferreport">
+                        <div class="d-flex align-items-center">
+                            <span>Transfer Reports</span> <br>
+                        </div>
+                    </a>
+                    <a routerLink="salesreportbyseller">
+                        <div class="d-flex align-items-center">
+                            <span>Sales Reports By seller </span> <br>
+                        </div>
+                    </a>
+                    <a routerLink="profitreport">
+                        <div class="d-flex align-items-center">
+                            <span>Profit Report</span> <br>
+                        </div>
+                    </a>
+                    <!-- <a routerLink="itemreport">
+                        <div class="d-flex align-items-center">
+                            <span>Item Report</span> <br>
+                        </div>
+                    </a> -->
+                </div>
+            </li>
+            <div class="box">
+                <div class="d-flex align-items-center" routerLink="custmors">
+                    <img src="/assets/custmoreicon.png" alt="image" class="img-fluid sideicon">
+                    <span>Customers</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="d-flex align-items-center" routerLink="expenses">
+                    <img src="/assets/expensesicon.png" alt="image" class="img-fluid sideicon">
+                    <span>Expenses</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="d-flex align-items-center" routerLink="customorsreturn">
+                    <img src="/assets/custmrreturnicon.png" alt="image" class="img-fluid sideicon">
+                    <span>Customers Return</span>
+                </div>
+            </div>
+        <div class="box signout">
+            <div class="d-flex align-items-center">
+                <img src="/assets/singnouticon.png" alt="image" class="img-fluid sideicon">
+                <span>Sign Out</span>
+            </div>
+        </div>
+
+
+
+    </div>
+</aside>
+
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header canvasheader">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">DASHBOARD</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="sidenavbar">
+
+            <h4 id="dash">DASHBOARD</h4>
+
+
+            <div class="box">
+                <div class="d-flex align-items-center">
+                    <img src="/assets/dashicon.png" alt="image" class="img-fluid sideicon">
+                    <span>Dashboard</span>
+                </div>
+            </div>
+
+            <li class="item">
+                <p class="data">
+                    <img src="/assets/saleicon.png" alt="image" class="img-fluid sideicon">
+                    <span>Sales</span>
+                    <i class="bi bi-chevron-right dropdown"></i>
+                </p>
+                <div class="nestedata">
+                    <a routerLink="#">
+                        <div class="d-flex align-items-center">
+                            <span>Point of Sales</span> <br>
+                        </div>
+                    </a>
+                    <!-- <a routerLink="#">
+                        <div class="d-flex align-items-center">
+                            <span>Sales List</span> <br>
+                        </div>
+                    </a> -->
+                </div>
+            </li>
+
+            <div class="box">
+                <div class="d-flex align-items-center">
+                    <img src="/assets/produticon.png" alt="image" class="img-fluid sideicon">
+                    <span>Products</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="d-flex align-items-center">
+                    <img src="/assets/produticon.png" alt="image" class="img-fluid sideicon">
+                    <span>Stock Management</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="d-flex align-items-center">
+                    <img src="/assets/mstrcreationicon.png" alt="image" class="img-fluid sideicon">
+                    <span>Master Creation</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="d-flex align-items-center">
+                    <img src="/assets/ordericon.png" alt="image" class="img-fluid sideicon">
+                    <span>Order By Store</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="d-flex align-items-center">
+                    <img src="/assets/paymticon.png" alt="image" class="img-fluid sideicon">
+                    <span>Payment Mode</span>
+                </div>
+            </div>
+                <li class="item">
+                    <p class="data">
+                        <img src="/assets/saleicon.png" alt="image" class="img-fluid sideicon">
+                        <span>Reports</span>
+                        <i class="bi bi-chevron-right dropdown"></i>
+                    </p>
+                    <div class="nestedata">
+                        <a routerLink="#">
+                            <div class="d-flex align-items-center">
+                                <span>Item of Reports</span> <br>
+                            </div>
+                        </a>
+                        <a routerLink="#">
+                            <div class="d-flex align-items-center">
+                                <span>Item of Reports</span> <br>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            <div class="box">
+                <div class="d-flex align-items-center" routerLink="custmors">
+                    <img src="/assets/custmoreicon.png" alt="image" class="img-fluid sideicon">
+                    <span>Customers</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="d-flex align-items-center" routerLink="expenses">
+                    <img src="/assets/expensesicon.png" alt="image" class="img-fluid sideicon">
+                    <span>Expenses</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="d-flex align-items-center" routerLink="customorsreturn">
+                    <img src="/assets/custmrreturnicon.png" alt="image" class="img-fluid sideicon">
+                    <span>Customers Return</span>
+                </div>
+            </div>
+            <div class="box signout">
+                <div class="d-flex align-items-center">
+                    <img src="/assets/singnouticon.png" alt="image" class="img-fluid sideicon">
+                    <span>Sign Out</span>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+  </div>

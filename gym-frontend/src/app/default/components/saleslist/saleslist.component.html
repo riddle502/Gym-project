@@ -1,0 +1,63 @@
+<main>
+
+
+    <section class="paymentmode">
+        <div class="container">
+            <div class="box-container">
+                <div class="heading">
+                    <h2>ASSIGN PRODUCT TO STORES </h2>
+                </div>
+
+                <div class="allreport d-flex align-items-center">
+                  <div class="button" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu mt-3">
+                    <button mat-raised-button>ALL Stores</button>
+                    <mat-icon>keyboard_arrow_down</mat-icon>
+                  </div>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item *ngFor="let store of dropdownOptions" (click)="selectStore(store._id)">
+                      <mat-icon>store</mat-icon>
+                      <span>{{ store.userName }}</span>
+                    </button>
+                  </mat-menu>
+                </div>
+              </div>
+           <div class="row row1 row3 mt-4">
+                <div class="col boxcontent box1 text-start">
+                    <img src="/assets/circleicon.png" alt="image" class="img-fluid">
+                    <span>PRODUCT LIST</span>
+                </div>
+                <div class="col boxcontent box2 text-end">
+                    <span>QTY</span>
+                </div>
+            </div>
+
+            <div class="row row4 selectProducts">
+                <div class="col-md-6 left" id="left">
+                    <div class="contentflexitems">
+                        <section class="example-section" *ngFor="let products of data">
+                            <mat-checkbox class="example-margin">{{products.productName}}</mat-checkbox>
+                            <!-- <section class="example-margin">{{products.productName}}</section> -->
+
+                          </section>
+                    </div>
+                </div>
+                <div class="col-md-6 right text-end" id="right">
+
+                    <div class="content" *ngFor="let items of arrayOfdata ;let i = index">
+                      <span class="plus" (click)="increase(i)">+</span>
+                      <input type="number" [(ngModel)]="items.number" class="quantity-input"  (ngModelChange)="updateSelectedProducts()" />
+                      <span class="minus" (click)="decrease(i)">-</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="allreport d-flex align-items-center">
+              <div class="button" aria-label="Example icon-button with a menu mt-3">
+                <button mat-raised-button (click)="assignProduct()">Assign Products</button>
+              </div>
+            </div>
+
+        </div>
+    </section>
+</main>

@@ -1,0 +1,483 @@
+<main>
+    <section class="product">
+        <div class="container">
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="content d-flex align-items-center">
+                            <div class="chevron">
+                                <i class="bi bi-chevron-left"></i>
+                            </div>
+                            <div class="box">
+                                <h4>PRODUCTS</h4>
+                            </div>
+                        </div>
+
+                        <div class="btncontainer mt-4">
+                            <div class="btn active" id="tab-1">ADD PRODUCT</div>
+                            <div class="btn" id="tab-2">PRODUCT LIST</div>
+                            <div class="btn" id="tab-3">BULK UPLOAD</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="tabcontent show" id="tab-1-content">
+
+
+        <section class="addnewproduct mt-4">
+            <div class="container">
+                <div class="row row1">
+                    <div class="col-md-12 prduct">
+                        <p class="text-center">ADD NEW PRODUCT</p>
+                    </div>
+                </div>
+                <div class="row row2 d-flex justify-content-evenly formdata">
+                    <div class="col-md-7 left">
+                        <p>PRODUCT INFORMATION</p>
+                        <form [formGroup]="formModule" (ngSubmit)="addProductdata()">
+                            <div mat-dialog-content>
+                                <div class="box-container mt-3">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="inputfiled">
+                                                <h6>Product Name</h6>
+                                                <mat-form-field class="example-full-width">
+                                                    <input type="text" matInput  formControlName="productName"
+                                                        [errorStateMatcher]="matcher">
+                                                    <mat-error
+                                                        *ngIf="productnameFormControl.hasError('productname') && !productnameFormControl.hasError('required')">
+                                                        Please enter a valid product name
+                                                    </mat-error>
+                                                    <mat-error *ngIf="productnameFormControl.hasError('required')">
+                                                        product name is <strong>required</strong>
+                                                    </mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="select">
+                                                <h6>Category</h6>
+                                                <mat-form-field>
+                                                    <mat-select [(ngModel)]="selectedcategary"
+                                                        (ngModelChange)="onCategorySelected()"  formControlName="category">
+                                                        <mat-option *ngFor="let catry of category" [value]="catry._id">
+                                                            {{catry.name}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-container">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="select">
+                                                <h6>Sub Category</h6>
+                                                <mat-form-field>
+                                                    <mat-select [(ngModel)]="subCategoryvr"
+                                                        (ngModelChange)="subCategorymethod(subCategoryvr)" formControlName="subCategory">
+                                                        <mat-option *ngFor="let sbcatry of subcategory"
+                                                            [value]="sbcatry">
+                                                            {{sbcatry.subCategoryName}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="select">
+                                                <h6>Brand</h6>
+                                                <mat-form-field>
+                                                    <mat-select  formControlName="brandId">
+                                                        <mat-option *ngFor="let brands of brand"
+                                                            [value]="disableSelect.value" >
+                                                            {{brands.brandname}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-container">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="inputfiled">
+                                                <h6>Tax</h6>
+                                                <mat-form-field class="example-full-width">
+                                                    <input type="number" matInput
+                                                        [errorStateMatcher]="matcher" formControlName="tax">
+                                                    <mat-error
+                                                        *ngIf="taxFormControl.hasError('tax') && !taxFormControl.hasError('required')">
+                                                        Please enter a valid tax
+                                                    </mat-error>
+                                                    <mat-error *ngIf="taxFormControl.hasError('required')">
+                                                        tax is <strong>required</strong>
+                                                    </mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="inputfiled">
+                                                <h6>Tax Method</h6>
+                                                <mat-form-field class="example-full-width">
+                                                    <input type="text" matInput
+                                                        [errorStateMatcher]="matcher" formControlName="taxMethod">
+                                                    <mat-error
+                                                        *ngIf="taxmethodFormControl.hasError('taxmethod') && !taxmethodFormControl.hasError('required')">
+                                                        Please enter a valid taxmethod
+                                                    </mat-error>
+                                                    <mat-error *ngIf="taxmethodFormControl.hasError('required')">
+                                                        taxmethod is <strong>required</strong>
+                                                    </mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-container">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="inputfiled">
+                                                <h6>Product Cost</h6>
+                                                <mat-form-field class="example-full-width">
+                                                    <input type="number" matInput
+                                                        [errorStateMatcher]="matcher" formControlName="productCost">
+                                                    <mat-error
+                                                        *ngIf="productCostFormControl.hasError('productCost') && !productCostFormControl.hasError('required')">
+                                                        Please enter a valid product Cost
+                                                    </mat-error>
+                                                    <mat-error *ngIf="productCostFormControl.hasError('required')">
+                                                        productCost is <strong>required</strong>
+                                                    </mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="inputfiled">
+                                                <h6>Product Price</h6>
+                                                <mat-form-field class="example-full-width">
+                                                    <input type="number" matInput
+                                                        [errorStateMatcher]="matcher" formControlName="productPrice">
+                                                    <mat-error
+                                                        *ngIf="productPriceFormControl.hasError('productPrice') && !productPriceFormControl.hasError('required')">
+                                                        Please enter a valid product price
+                                                    </mat-error>
+                                                    <mat-error *ngIf="productPriceFormControl.hasError('required')">
+                                                        productPrice is <strong>required</strong>
+                                                    </mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-container">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="inputfiled">
+                                                <h6>Product Qnt</h6>
+                                                <mat-form-field class="example-full-width">
+                                                    <input type="number" matInput
+                                                        [errorStateMatcher]="matcher" formControlName="productQuantity">
+                                                    <mat-error
+                                                        *ngIf="productQntFormControl.hasError('productQnt') && !productQntFormControl.hasError('required')">
+                                                        Please enter a valid productQnt
+                                                    </mat-error>
+                                                    <mat-error *ngIf="productQntFormControl.hasError('required')">
+                                                        productQnt is <strong>required</strong>
+                                                    </mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-floating mt-3">
+                                    <textarea class="form-control" placeholder="Leave a comment here"
+                                        id="floatingTextarea2" style="height: 100px" formControlName="productDescription"></textarea>
+                                </div>
+                                <div class="barcode mt-4">
+
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" formControlName="productImage" class="custom-file-input" id="customFile"
+                                                >
+                                                <!-- (change)="onImageSelected($event)" -->
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="buttons">
+                                    <button  class="btn bt1 addproduct">ADD PRODUCT</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-4 right">
+
+                        <div class="image">
+                            <h6>Product Image</h6>
+                            <img src="assets/Rectangle.png" alt="image" class="img-fluid">
+                        </div>
+                        <div class="content mt-2">
+                            <b class="b">Product Number :</b> <br>
+                            <b>HSN Code :</b>
+                        </div>
+                        <div class="buttons">
+                            <button type="button" class="btn bt2 shadow ">DISCARD</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <div class="tabcontent  t2contnt" id="tab-2-content">
+
+        <section class="addnewproduct mt-4">
+            <div class="container">
+                <div class="row row1">
+                    <div class="col-md-12 prduct">
+                        <p class="text-center">PRODUCT LIST</p>
+                    </div>
+                </div>
+                <div class="row row2 d-flex justify-content-evenly">
+
+                    <div class="col-md-12">
+
+
+
+
+                        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                            <!-- Position Column -->
+                            <ng-container matColumnDef="productName">
+                                <th mat-header-cell *matHeaderCellDef> Name</th>
+                                <td mat-cell *matCellDef="let element"> {{element.productName}} </td>
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="productCost">
+                                <th mat-header-cell *matHeaderCellDef> Cost </th>
+                                <td mat-cell *matCellDef="let element"> {{element.productCost}} </td>
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="productPrice">
+                                <th mat-header-cell *matHeaderCellDef> Price </th>
+                                <td mat-cell *matCellDef="let element"> {{element.productPrice}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="tax">
+                                <th mat-header-cell *matHeaderCellDef> Tax </th>
+                                <td mat-cell *matCellDef="let element"> {{element.tax}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="taxMethod">
+                                <th mat-header-cell *matHeaderCellDef> Text Method </th>
+                                <td mat-cell *matCellDef="let element"> {{element.taxMethod}} </td>
+                            </ng-container>
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="productQuantity">
+                                <th mat-header-cell *matHeaderCellDef> Product Quantity </th>
+                                <td mat-cell *matCellDef="let element"> {{element.productQuantity}} </td>
+                            </ng-container>
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="productDescription">
+                                <th mat-header-cell *matHeaderCellDef> Product Description </th>
+                                <td mat-cell *matCellDef="let element"> {{element.productDescription}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                            <!-- Row shown when there is no matching data. -->
+                            <tr class="mat-row" *matNoDataRow>
+                                <td class="mat-cell" colspan="4">No data matching the filter </td>
+                                <!-- "{{input.value}}" -->
+                            </tr>
+                        </table>
+
+
+                        <!-- <table class="table table-borderless">
+                            <thead>
+                                <tr class="text-center">
+                                    <th>S.no</th>
+                                    <th>Product Image</th>
+                                    <th>Added by Name</th>
+                                    <th>Category</th>
+                                    <th>GST</th>
+                                    <th>Price</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-center">
+                                    <td id="paddingtop">1</td>
+                                    <td>
+                                        <img src="assets/product1.png" alt="image" class="img-fluid prdct">
+                                    </td>
+                                    <td id="paddingtop">-</td>
+                                    <td id="paddingtop">-</td>
+                                    <td id="paddingtop">-</td>
+                                    <td id="paddingtop">-</td>
+                                    <td>
+                                        <button mat-raised-button [matMenuTriggerFor]="belowMenu"
+                                            aria-label="Example icon-button with a menu" id="actioni">Action
+                                            <mat-icon>keyboard_arrow_down</mat-icon>
+                                        </button>
+                                        <mat-menu #belowMenu="matMenu" yPosition="below">
+                                            <button mat-menu-item>
+                                                <span>Print barcode</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>Edit Product</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>Delete Product</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>View Product</span>
+                                            </button>
+                                            <button mat-menu-item (click)="openDialog()">
+                                                <span>Product Category</span>
+                                            </button>
+                                        </mat-menu>
+                                    </td>
+                                </tr>
+                                <tr class="text-center">
+                                    <td id="paddingtop">2</td>
+                                    <td>
+                                        <img src="assets/product2.png" alt="image" class="img-fluid prdct">
+                                    </td>
+                                    <td id="paddingtop">-</td>
+                                    <td id="paddingtop">-</td>
+                                    <td id="paddingtop">-</td>
+                                    <td id="paddingtop">-</td>
+                                    <td>
+                                        <button mat-raised-button [matMenuTriggerFor]="belowMenu"
+                                            aria-label="Example icon-button with a menu" id="actioni">Action
+                                            <mat-icon>keyboard_arrow_down</mat-icon>
+                                        </button>
+                                        <mat-menu #belowMenu="matMenu" yPosition="below">
+                                            <button mat-menu-item>
+                                                <span>Print barcode</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>Edit Product</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>Delete Product</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>View Product</span>
+                                            </button>
+                                            <button mat-menu-item (click)="openDialog()">
+                                                <span>Product Category</span>
+                                            </button>
+                                        </mat-menu>
+                                    </td>
+                                </tr>
+                                <tr class="text-center">
+                                    <td id="paddingtop">3</td>
+                                    <td>
+                                        <img src="assets/product3.png" alt="image" class="img-fluid prdct">
+                                    </td>
+                                    <td id="paddingtop">-</td>
+                                    <td id="paddingtop">-</td>
+                                    <td id="paddingtop">-</td>
+                                    <td id="paddingtop">-</td>
+                                    <td>
+                                        <button mat-raised-button [matMenuTriggerFor]="belowMenu"
+                                            aria-label="Example icon-button with a menu" id="actioni">Action
+                                            <mat-icon>keyboard_arrow_down</mat-icon>
+                                        </button>
+                                        <mat-menu #belowMenu="matMenu" yPosition="below">
+                                            <button mat-menu-item>
+                                                <span>Print barcode</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>Edit Product</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>Delete Product</span>
+                                            </button>
+                                            <button mat-menu-item>
+                                                <span>View Product</span>
+                                            </button>
+                                            <button mat-menu-item (click)="openDialog()">
+                                                <span>Product Category</span>
+                                            </button>
+                                        </mat-menu>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table> -->
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="tabcontent" id="tab-3-content">
+
+      <section class="uploadFile">
+          <div class="container">
+              <div class="row rowOfparent d-flex align-items-center">
+                  <div class="col-md-6 left" id="left">
+
+                      <div class="heading">
+                          <h1>Upload Files</h1>
+                      </div>
+
+                      <div class="box-container mt-4">
+
+                          <div class="content text-center">
+                              <img src="assets/uploadbutton.jpg" alt="image"class="img-fluid fileuploadimg">
+                              <h6>Drag files to upload</h6>
+                              <p>or</p>
+                          </div>
+
+                          <!-- <div class="btn button text-center d-block">
+                              <button mat-raised-button type="file"  id="formFile">Browse Files</button>
+                          </div> -->
+
+                          <div class="mb-3 chooseFile">
+                            <input class="form-control" type="file" id="formFile" (change)="onFileChange($event)" >
+                            <button class="btn btn-primary mt-2" (click)="uploadFile()">Upload and Call API</button>
+                          </div>
+
+                          <div class="sizOfimg text-center mt-4">
+                              <p>Max file size : <b>50MB</b></p>
+                              <p class="mt-2">Supported file types : <b> JPG , PNG , GIF , PDG , SVG</b></p>
+                          </div>
+
+                      </div>
+
+                  </div>
+
+                  <div class="col-md-6 right" id="right">
+                      <div class="image">
+                          <img src="assets/uploadimagemen.jpg" alt="image" class="img-fluid">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+  </div>
+
+</main>

@@ -1,0 +1,60 @@
+.loginpage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url(/assets/gymbg6.png) no-repeat center center/cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+.loginpage .login{
+    border: 2px solid #ffffff66;
+    padding: 37px;
+    position: relative;
+    top: 149px;
+    text-align: center;
+    border-radius: 40px;
+    width: 540px;
+}
+.loginpage .image{
+    position: relative;
+    top: 149px;
+}
+.loginpage .login h3{
+    color: white;
+    font-weight: bold;
+    padding-bottom: 23px;
+    font-size: 33px;
+}
+.loginpage .loginbtn{
+    background: #F1BE41;
+    padding: 23px 80px;
+    border-radius: 33px;
+}
+.loginpage .forgetpassword{
+    color: white;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+.loginpage .loginwith{
+    color: white;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+.loginpage .icons .icon{
+width: 35px;
+}
+.loginpage .icons .icon2{
+margin: 0px 15px;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  

@@ -1,0 +1,157 @@
+.sidenavb {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 300px;
+    background: #F1BE41;
+    padding: 35px;
+    z-index: 1000;
+    border-top-right-radius: 74px;
+    border-bottom-right-radius: 74px;
+    overflow: scroll;
+}
+.sidenavb::-webkit-scrollbar{
+    width: 0;
+}
+.sidenavb::-webkit-scrollbar-track{
+background: transparent;
+}
+.sidenavb::-webkit-scrollbar-thumb{
+    background: #F1BE41;
+}
+
+.sidenavb .item .bi-chevron-right {
+    position: absolute;
+    top: 4px;
+    right: -12px;
+    font-size: 15px
+}
+.sidenavb #dash {
+    font-weight: bold;
+    padding-bottom: 9px;
+}
+.sidenavb .sideicon {
+    cursor: pointer;
+}
+
+.sidenavb .item {
+    position: relative;
+    line-height: 3;
+}
+.sidenavb .signout {
+    position: relative;
+    top: 67px;
+    cursor: pointer;
+}
+.sidenavb .item .data span{
+    padding-left: 7px;
+}
+.sidenavb .item{
+    cursor: pointer;
+}
+
+.sidenavb .box {
+    line-height: 3;
+}
+.sidenavb .box span{
+    cursor: pointer;
+}
+.sidenavb .box span{
+    padding-left: 7px;
+}
+
+.rotate {
+    transform: rotate(90deg);
+}
+ .bilist {
+    font-size: 32px;
+    border: 1px solid gainsboro;
+    width: 46px;
+    height: 46px;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background: #E2B236;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    display: none;
+}
+@media(max-width:830px){
+    .bilist {
+        display: block;
+    }
+}
+.nestedata {
+    display: none;
+    background: #E2B236;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px -1px black;
+    border: none;
+}
+.nestedata span{
+color: black;
+padding-left: 28px;
+}
+.nestedata .d-flex{
+    border: 1px solid #F9C339;
+    margin: 4px 3px;
+    border-radius: 10px;
+}
+
+.canvasheader {
+    background: #E2B236;
+    color: white;
+    font-weight: bold
+}
+.offcanvas-body {
+    background: #E2B236;
+}
+
+
+
+
+.offcanvas-body .item .bi-chevron-right {
+    position: absolute;
+    top: 4px;
+    right: -12px;
+    font-size: 15px
+}
+.offcanvas-body #dash {
+    font-weight: bold;
+    padding-bottom: 9px;
+}
+.offcanvas-body .sideicon {
+    cursor: pointer;
+}
+
+.offcanvas-body .item {
+    position: relative;
+    line-height: 3;
+}
+.offcanvas-body .signout {
+    position: relative;
+    top: 67px;
+    cursor: pointer;
+}
+.offcanvas-body .item .data span{
+    padding-left: 7px;
+}
+.offcanvas-body .item{
+    cursor: pointer;
+}
+
+.offcanvas-body .box {
+    line-height: 3;
+}
+.offcanvas-body .box span{
+    cursor: pointer;
+}
+.offcanvas-body .box span{
+    padding-left: 7px;
+}
